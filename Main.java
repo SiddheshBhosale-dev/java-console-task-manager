@@ -43,6 +43,8 @@ class TaskManager{
     load();
 }
 
+
+
     void add(Task t){
         tasks.add(t);
         save();
@@ -125,6 +127,7 @@ public class Main{
                     LocalDate dueDate = LocalDate.parse(sc.nextLine());
 
                     manager.add(new Task(id, taskName, priority, dueDate));
+                    id++;
                     System.out.println("Task added successfully");
                     break;
 
@@ -144,7 +147,8 @@ public class Main{
 
                 case 5:
                     System.out.println("Exiting...");
-                    break;
+                    sc.close();
+                    return;
 
                 default:
                     System.out.println("Invalid choice");
